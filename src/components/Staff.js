@@ -2,11 +2,11 @@ import React from "react";
 
 function Staff(props){
     return(
-        <div>
-            <h1>List of all Staff</h1>
+        <div className="staff">
             <ol>
-                <li>Employee {props.name}</li>
+                <li>Employee {props.name} {props.role ? props.role : "No Role"}</li>
             </ol>
+            
         </div>
     )
 }

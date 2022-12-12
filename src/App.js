@@ -7,11 +7,17 @@ function App() {
   return (
    
     <div className="App">
+      
        {showStaff ? 
-        <Staff name="Begim"></Staff>
+       <>
+        <Staff name="Begim" role="Intern" />
+        <Staff name="Abby"/>
+        <Staff name="Haley"  />
+        </>
         : 
         <p>Can't see the employees</p>
       }
+      
     </div>
   );
 }
