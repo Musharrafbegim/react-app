@@ -5,6 +5,33 @@ import Staff from './components/Staff';
 function App() {
   //variables and states should be written before return
   const [role, setRole] = useState('dev');
+  const [employees, setEmployees] = useState([
+    {
+      name: "Caleb", 
+      role: "developer", 
+      img:'https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg',
+    },
+    {
+      name: "Begim", 
+      role: "developer", 
+      img:'https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg',
+    },
+    {
+      name: "Sheroz", 
+      role: "developer", 
+      img:'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
+    },
+    {
+      name: "Leila", 
+      role: "developer", 
+      img:'https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg',
+    },
+    {
+      name: "Greta", 
+      role: "developer", 
+      img:'https://images.pexels.com/photos/372042/pexels-photo-372042.jpeg',
+    }
+  ]);
 
   const showStaff = true;
   return (
@@ -18,11 +45,11 @@ function App() {
           setRole(e.target.value);
         }} />
         <div className='flex flex-wrap justify-center'> 
-        <Staff name="Begim" role="Intern" img="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-        <Staff name="Abby" role={role} img="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-        <Staff name="Abby" role={role} img="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-        <Staff name="Abby" role={role} img="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-        <Staff name="Abby" role={role} img="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
+        {employees.map((employee) => {
+          return(
+            <Staff name={employee.name} role={employee.role} img={employee.img} />
+          )
+        })}
         </div>
         </>
         : 
