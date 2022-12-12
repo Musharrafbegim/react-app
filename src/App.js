@@ -1,6 +1,7 @@
 import './index.css';
 import React, {useState} from 'react';
 import Staff from './components/Staff';
+import {v4 as uuidv4} from 'uuid';
 
 function App() {
   //variables and states should be written before return
@@ -47,7 +48,7 @@ function App() {
         <div className='flex flex-wrap justify-center'> 
         {employees.map((employee) => {
           return(
-            <Staff name={employee.name} role={employee.role} img={employee.img} />
+            <Staff key={uuidv4()} name={employee.name} role={employee.role} img={employee.img} />
           )
         })}
         </div>
